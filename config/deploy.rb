@@ -51,8 +51,12 @@ namespace :deploy do
 
   desc "Create an admin user. CHANGE PASSWORD IMMEDIATELY!"
   task :create_admin_user do
-    on remote_host do
-      execute "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+    on primary :db do
+      within current_path do
+         with rails_env: fetch(:stage) do
+          execute :rake, 'db:seed'
+        end
+      end
     end
   end
 
@@ -88,7 +92,7 @@ namespace :deploy do
   end
 end
 
-after "deploy:migrate", "deploy:create_admin_user"
+after "deploy", "deploy:create_admin_user"
 after "deploy", "deploy:compile_assets"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
