@@ -1,0 +1,23 @@
+body
+{
+	color: #444444;
+	line-height: 1.6;
+}
+
+h1
+{
+	line-height: 1;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.headlineLike
+{
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+.centerText
+{
+	text-align: center;
+}

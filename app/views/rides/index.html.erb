@@ -1,0 +1,33 @@
+<%= link_to("Back", :controller => "dashboard") %>
+
+<h1>Ride list</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Departure station</th>
+			<th>Arrival station</th>
+			<th>Departure time</th>
+			<th>Departure delay</th>
+			<th>Arrival time</th>
+			<th>Arrival delay</th>
+			<th colspan="2">&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @rides.reverse_each() do |printedRide| %>
+			<tr>
+				<td><%= printedRide.departure_station.name %></td>
+				<td><%= printedRide.arrival_station.name %></td>
+				<td><%= printedRide.departure_time.strftime("%d.%m.%Y %H:%M:%S") %></td>
+				<td class="centerText"><%= printedRide.departure_delay %> min</td>
+				<td><%= printedRide.arrival_time.strftime("%d.%m.%Y %H:%M:%S") %></td>
+				<td class="centerText"><%= printedRide.arrival_delay %> min</td>
+				<td><%= link_to("Edit", edit_ride_path(printedRide)) %></td>
+				<td><%= link_to("Delete", ride_path(printedRide),
+					method: :delete,
+					data: { confirm: "Are you sure?" }) %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

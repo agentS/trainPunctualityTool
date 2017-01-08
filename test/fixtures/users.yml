@@ -1,0 +1,6 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+admin:
+  username: lukas
+  password_hash: $2y$10$qwBUHhZCOxcdcC1QduCcpepToQAL87aXSBMji8L.Eig7Scc2uCLRK
+  password_salt: $2y$10$qwBUHhZCOxcdcC1QduCcpepToQAL87aXSBMji8L.Eig7Scc2uCLRK

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+punctual:
+  departure_time: 2016-12-25 11:30:09
+  arrival_time: 2016-12-25 11:30:09
+  departure_delay: 0
+  arrival_delay: 0
+  departure_station: deaprture
+  arrival_station: arrival
+
+delayed:
+  departure_time: 2016-12-25 11:30:09
+  arrival_time: 2016-12-25 11:30:09
+  departure_delay: 5
+  arrival_delay: 10
+  departure_station: departure
+  arrival_station: arrival

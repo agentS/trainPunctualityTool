@@ -1,0 +1,18 @@
+<%= link_to("Back", :controller => "dashboard") %>
+
+<h1>Add ride to database</h1>
+
+<% if @ride.errors.any?() == true %>
+	<div id="error_explanation">
+		<h2>
+			<%= pluralize(@ride.errors.count, "error") %> prohibited this article from being saved:
+		</h2>
+		<ul>
+			<% @ride.errors.full_messages.each do |errorMessage| %>
+				<li><%= errorMessage %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<%= render("form") %>
