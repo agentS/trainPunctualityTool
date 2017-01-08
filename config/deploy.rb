@@ -52,7 +52,7 @@ namespace :deploy do
   desc "Create a link to the database configuration file."
   task :symlink_db_configuration do
     on remote_host do
-      execute "ln -s #{deploy_to}/shared/config/database.yml #{current_path}/config/database.yml"
+      execute "ln -f -s #{deploy_to}/shared/config/database.yml #{current_path}/config/database.yml"
     end
   end
 
@@ -88,7 +88,7 @@ namespace :deploy do
   end
 end
 
-after "deploy", "deploy:symlink_db_configuration"
+#before "deploy:migrate", "deploy:symlink_db_configuration"
 after "deploy", "deploy:compile_assets"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
