@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.new({ :username => "lukas", :password => "Cisco0", :password_confirmation => "Cisco0" }).save()

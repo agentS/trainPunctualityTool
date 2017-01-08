@@ -49,10 +49,10 @@ set :keep_releases, 2
 namespace :deploy do
   remote_host = "lukas@www.churchwood.at"
 
-  desc "Create a link to the database configuration file."
-  task :symlink_db_configuration do
+  desc "Create an admin user. CHANGE PASSWORD IMMEDIATELY!"
+  task :create_admin_user do
     on remote_host do
-      execute "ln -f -s #{deploy_to}/shared/config/database.yml #{current_path}/config/database.yml"
+      execute "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
     end
   end
 
@@ -88,7 +88,7 @@ namespace :deploy do
   end
 end
 
-#before "deploy:migrate", "deploy:symlink_db_configuration"
+after "deploy:migrate", "deploy:create_admin_user"
 after "deploy", "deploy:compile_assets"
 after "deploy", "deploy:restart"
 after "deploy", "deploy:cleanup"
