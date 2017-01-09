@@ -5,22 +5,22 @@
 <%= link_to("Add user", new_user_path()) %>
 
 <table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th colspan="2">&nbsp;</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @users.each() do |printedUser|  %>
-			<tr>
-				<td><%= printedUser.username %></td>
-				<td><%= link_to("Edit", edit_user_path(printedUser)) %></td>
-				<td><%= link_to("Delete", user_path(printedUser),
-					method: :delete,
-					data:  { confirm: "Are you sure?" }) %>
-				</td>
-			</tr>
-		<% end %>
-	</tbody>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="2">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each() do |printedUser|  %>
+      <tr>
+        <td><%= printedUser.username %></td>
+        <td><%= link_to("Edit", edit_user_path(printedUser)) %></td>
+        <td><%= link_to("Delete", user_path(printedUser),
+          method: :delete,
+          data:  { confirm: "Are you sure?" }) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

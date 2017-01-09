@@ -11,9 +11,9 @@
   <body>
     <div id="user_nav">
       <% if actual_user() %>
-      	<%= link_to("Log out", log_out_path()) %>
+        <%= link_to("Log out", log_out_path()) %>
       <% else %>
-      	<%= link_to("Log in", log_in_path()) %>
+        <%= link_to("Log in", log_in_path()) %>
       <% end %>
     </div>
 

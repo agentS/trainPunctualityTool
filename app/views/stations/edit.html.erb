@@ -3,25 +3,25 @@
 <h1>Edit station</h1>
 
 <%= form_for(:station, url: station_path(@station), method: :patch) do |f| %>
-	<% if @station.errors.any?() == true %>
-		<div id="error_explanation">
-			<h2>
-				<%= pluralize(@station.errors.count, "error") %> prohibited
-				this station form being saved:
-			</h2>
-			<ul>
-				<% @station.errors.full_messages.each() do |printedError| %>
-					<li><%= printedError %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+  <% if @station.errors.any?() == true %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@station.errors.count, "error") %> prohibited
+        this station form being saved:
+      </h2>
+      <ul>
+        <% @station.errors.full_messages.each() do |printedError| %>
+          <li><%= printedError %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-	<p>
-		<%= f.label(:name) %>
-		<%= f.text_field(:name) %>
-	</p>
-	<p>
-		<%= f.submit() %>
-	</p>
+  <p>
+    <%= f.label(:name) %>
+    <%= f.text_field(:name) %>
+  </p>
+  <p>
+    <%= f.submit() %>
+  </p>
 <% end %>

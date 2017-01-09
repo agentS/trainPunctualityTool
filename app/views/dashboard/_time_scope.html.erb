@@ -1,10 +1,10 @@
 <div class="one-child headlineLike">
-	<form method="POST" action="/dashboard/save_time_scope">
-		<label>Time scope</label>
-		<input type="date" name="treshold_date" value="<%= get_treshold_date().strftime("%Y-%m-%d") %>">
+  <form method="POST" action="/dashboard/save_time_scope">
+    <label>Time scope</label>
+    <input type="date" name="treshold_date" value="<%= get_treshold_date().strftime("%Y-%m-%d") %>">
 
-		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>"/>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token() %>"/>
 
-		<input type="submit" value="Save">
-	</form>
+    <input type="submit" value="Save">
+  </form>
 </div>

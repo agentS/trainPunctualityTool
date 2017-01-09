@@ -1,42 +1,42 @@
 <% require('date') %>
 
 <%= form_for([ @ride ]) do |f| %>
-	<p>
-		<%= f.label :departure_station %>
-		<% if @ride.departure_station != nil %>
-			<%= f.select :departure_station_id, options_for_select(Station.all.map { |s| [s.name, s.id] }, @ride.departure_station.id) %>
-		<% else %>
-			<%= f.text_field :departure_station %>
-		<% end %>
-	</p>
-	<p>
-		<%= f.label :departure_time %>
-		<%= f.datetime_local_field :departure_time, :value => Time.now().strftime('%Y-%m-%dT%H:%M:%S') %>
-	</p>
-	<p>
-		<%= f.label :departure_delay %>
-		<%= f.number_field :departure_delay, :value => 0, :min => 0, :max => 240 %>
-	</p>
+  <p>
+    <%= f.label :departure_station %>
+    <% if @ride.departure_station != nil %>
+      <%= f.select :departure_station_id, options_for_select(Station.all.map { |s| [s.name, s.id] }, @ride.departure_station.id) %>
+    <% else %>
+      <%= f.text_field :departure_station %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.label :departure_time %>
+    <%= f.datetime_local_field :departure_time, :value => Time.now().strftime('%Y-%m-%dT%H:%M:%S') %>
+  </p>
+  <p>
+    <%= f.label :departure_delay %>
+    <%= f.number_field :departure_delay, :value => 0, :min => 0, :max => 240 %>
+  </p>
 
-	
-	<p>
-		<%= f.label :arrival_station %>
-		<% if @ride.arrival_station != nil %>
-			<%= f.select :arrival_station_id, options_for_select(Station.all.map { |s| [s.name, s.id] }, @ride.arrival_station.id) %>
-		<% else %>
-			<%= f.text_field :arrival_station %>
-		<% end %>
-	</p>
-	<p>
-		<%= f.label :arrival_time %>
-		<%= f.datetime_local_field :arrival_time, :value => Time.now().strftime('%Y-%m-%dT%H:%M:%S') %>
-	</p>
-	<p>
-		<%= f.label :arrival_delay %>
-		<%= f.number_field :arrival_delay, :value => 0, :min => 0, :max => 240 %>
-	</p>
+  
+  <p>
+    <%= f.label :arrival_station %>
+    <% if @ride.arrival_station != nil %>
+      <%= f.select :arrival_station_id, options_for_select(Station.all.map { |s| [s.name, s.id] }, @ride.arrival_station.id) %>
+    <% else %>
+      <%= f.text_field :arrival_station %>
+    <% end %>
+  </p>
+  <p>
+    <%= f.label :arrival_time %>
+    <%= f.datetime_local_field :arrival_time, :value => Time.now().strftime('%Y-%m-%dT%H:%M:%S') %>
+  </p>
+  <p>
+    <%= f.label :arrival_delay %>
+    <%= f.number_field :arrival_delay, :value => 0, :min => 0, :max => 240 %>
+  </p>
 
-	<p>
-		<%= f.submit "Save ride" %>
-	</p>
+  <p>
+    <%= f.submit "Save ride" %>
+  </p>
 <% end %>

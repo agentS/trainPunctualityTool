@@ -1,14 +1,14 @@
 <div>
-	<%= link_to('Add ride', :controller => 'rides', :action => 'new') %>
-	<%= link_to('List rides', :controller => 'rides') %>
-	<%= link_to('Station management', :controller => 'stations') %>
-	<%= link_to('User management', :controller => 'users') %>
+  <%= link_to('Add ride', :controller => 'rides', :action => 'new') %>
+  <%= link_to('List rides', :controller => 'rides') %>
+  <%= link_to('Station management', :controller => 'stations') %>
+  <%= link_to('User management', :controller => 'users') %>
 </div>
 
 <div class="flex justify-between">
-	<%= render("time_scope") %>
+  <%= render("time_scope") %>
 
-	<%= render("punctuality") %>
+  <%= render("punctuality") %>
 </div>
 
 <%= render("latest_delayed_rides") %>

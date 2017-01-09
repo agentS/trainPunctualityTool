@@ -1,26 +1,26 @@
 <h1>Latest delayed rides</h1>
 
 <table>
-	<thead>
-		<tr>
-			<th>Departure station</th>
-			<th>Arrival station</th>
-			<th>Departure time</th>
-			<th>Departure delay</th>
-			<th>Arrival time</th>
-			<th>Arrival delay</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @latest_delayed_rides.each() do |printedRide| %>
-			<tr>
-				<td><%= printedRide.departure_station.name %></td>
-				<td><%= printedRide.arrival_station.name %></td>
-				<td><%= printedRide.departure_time.strftime("%d.%m.%Y %H:%M:%S") %></td>
-				<td class="centerText"><%= printedRide.departure_delay %> min</td>
-				<td><%= printedRide.arrival_time.strftime("%d.%m.%Y %H:%M:%S") %></td>
-				<td class="centerText"><%= printedRide.arrival_delay %> min</td>
-			</tr>
-		<% end %>
-	</tbody>
+  <thead>
+    <tr>
+      <th>Departure station</th>
+      <th>Arrival station</th>
+      <th>Departure time</th>
+      <th>Departure delay</th>
+      <th>Arrival time</th>
+      <th>Arrival delay</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @latest_delayed_rides.each() do |printedRide| %>
+      <tr>
+        <td><%= printedRide.departure_station.name %></td>
+        <td><%= printedRide.arrival_station.name %></td>
+        <td><%= printedRide.departure_time.strftime("%d.%m.%Y %H:%M:%S") %></td>
+        <td class="centerText"><%= printedRide.departure_delay %> min</td>
+        <td><%= printedRide.arrival_time.strftime("%d.%m.%Y %H:%M:%S") %></td>
+        <td class="centerText"><%= printedRide.arrival_delay %> min</td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
